@@ -1,8 +1,6 @@
-from tkinter import E
 import discord
 from discord.ui import Button, View
 from discord.commands import commands
-from janus import T
 import asyncio
 bot = commands.Bot()
 
@@ -14,7 +12,7 @@ CATEGORY_ID = 123
 
 @bot.command()
 async def ticket_msg(ctx):
-    button1 = Button(label="Open a ticket", style=discord.ButtonStyle.blurple, custom_id ="ticket_button")
+    button1 = Button(label="Open a ticket", style=discord.ButtonStyle.blurple, custom_id="ticket_button")
     view = View()
     view.add_item(button1)
     embed = discord.Embed(description=f"Open a ticket via. Button", title=f"Ticket System")
@@ -63,7 +61,7 @@ async def on_interaction(interaction):
 
 
 @bot.command()
-async def close(ctx, reason):
+async def close(ctx):
     if "ticket" in ctx.channel.name:
         embed = discord.Embed(
                 description=f'This Ticket will be closed in 5 seconds!',
