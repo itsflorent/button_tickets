@@ -43,8 +43,9 @@ async def on_interaction(interaction):
                                                             topic=f"Ticket von {interaction.user} \nClient-ID: {interaction.user.id}")
 
             
-            await ticket_channel.set_permissions(guild.get_role(TEAM_ROLE), send_messages=False,
-                                                read_messages=False)
+            await ticket_channel.set_permissions(guild.get_role(TEAM_ROLE), send_messages=True, read_messages=True, add_reactions=False,
+                                                embed_links=True, attach_files=True, read_message_history=True,
+                                                external_emojis=True)
             await ticket_channel.set_permissions(interaction.user, send_messages=True, read_messages=True, add_reactions=False,
                                                 embed_links=True, attach_files=True, read_message_history=True,
                                                 external_emojis=True)
